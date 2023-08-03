@@ -61,3 +61,17 @@ You can see a complete usage in the demo app.
 ## Contribution
 
 See [CONTRIBUTING.md](/CONTRIBUTING.md).
+
+
+
+
+CameraX
+预览画面旋转问题：
+
+Preview#setTargetRotation API应该可以工作：https://developer.android.com/reference/androidx/camera/core/Preview#setTargetRotation(int)
+要使此API工作，您的PreviewView必须处于COMPATIBLE模式：
+
+PreviewView#setImplementationMode(ImplementationMode.COMPATIBLE);
+您可以在GitHub上找到完整的示例：https://github.com/androidx/androidx/blob/androidx-main/camera/integration-tests/viewtestapp/src/main/java/androidx/camera/integration/view/PreviewViewFragment.java
+我上传了一个预览旋转的屏幕记录。请看一下，如果这不是你想要的结果，请告诉我：https://github.com/xizhang/public-files/blob/main/stackoverflow74798791/preview_rotation.mp4
+您也可以下载APK并自行测试：https://github.com/xizhang/public-files/blob/main/stackoverflow74798791/camera-testapp-view-debug.apk
